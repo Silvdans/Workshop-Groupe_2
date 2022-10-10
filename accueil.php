@@ -1,4 +1,3 @@
-//ceci est un commentaire modifié sur ma nouvelle branche
 <?php
 
     session_start();
