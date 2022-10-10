@@ -1,3 +1,4 @@
+//ceci est un commentaire
 <?php
 
     session_start();
