@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family:'Raleway', sans-serif ;
+    src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+}
+
+body{
+    background-color: rgb(79, 79, 109);   
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.previous{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    margin:  30px 0 0 70px;
+    
+}
+a:-webkit-any-link{
+    text-decoration: none;
+}
+
+.previous img{
+    height: 40px;
+    width: auto;
+
+}
+
+.previous p{
+    color: #B8DFD8 ;
+    font-size: 20px;
+    letter-spacing: 1.3px;  
+}
+
+@keyframes zen {
+    from {transform: translate(-50%, -50%) scale(1);}
+    to {transform: translate(-50%, -50%) scale(2);}
+  }
+  
+
+.zen img{
+    height: 30%;
+    width: auto;
+    float: left;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    text-align: center;
+ }  
+  .anim img{
+    cursor: pointer;
+    animation-name: zen;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+.cls{
+    clear: both;
+}
+
+.title{
+    color: white; 
+    text-align: center; 
+    margin-top: 70px;
+
+}
+.exo{
+    height:450px;
+}
+.title h1{
+    letter-spacing: 1.4px;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+}
+.title p{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1.4px;
+    font-size: 15px;
+}
+
+.control{
+   position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 100px;
+    left:750px;
+}
+.info{
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    }
+    
+    #infobulle{
+    opacity: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+    }
+    
+    #imginfo{
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    padding-right: 20px;
+    margin-right:20px;
+    margin-top: 20px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    }
+
+      

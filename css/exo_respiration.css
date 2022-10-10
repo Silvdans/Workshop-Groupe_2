@@ -1,0 +1,230 @@
+body {
+  background: #4C4C6D;
+  font: 400 16px/1.4 "Roboto", sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.wrapper {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 60vh;
+  height: 60vh;
+  position: absolute;
+  margin-top: 30px;
+}
+
+.directions {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 6%;
+  padding-top: 50px;
+  
+}
+.directions .message {
+  padding: 0.25rem;
+  animation: text-highlight 16000ms infinite;
+  color: white;
+  opacity: 0.3;
+  
+}
+.directions .message:nth-child(2) {
+  animation-delay: 4000ms;
+}
+.directions .message:nth-child(3) {
+  animation-delay: 8000ms;
+}
+.directions .message:nth-child(4) {
+  animation-delay: 12000ms;
+}
+
+
+.timer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  height: 4%;
+  background: #E8F6EF;
+}
+.timer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(-100%);
+  animation: timer 32000ms linear infinite ;
+  animation-fill-mode: forwards;
+  background: #B8DFD8;
+  z-index: 0;
+  border-radius: 25px;
+}
+.timer.inhale {
+  left: 10%;
+  width: 80%;
+  transform: rotate(0);
+}
+.timer.inhale:after {
+  animation-delay: 4000ms;
+}
+.timer.inhale-hold {
+  position: absolute;
+  width: 80%;
+  right: 10%;
+  bottom: 10%;
+  transform: rotate(90deg);
+  transform-origin: bottom right;
+}
+
+.timer.inhale-hold:after {
+  animation-delay: 8000ms;
+}
+.timer.exhale {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.timer.exhale:after {
+  animation-delay: 12000ms;
+}
+.timer.exhale-hold {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 10%;
+  transform: rotate(270deg);
+  transform-origin: bottom left;
+}
+
+.timer .indicators {
+  display: flex;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.timer .indicator {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex: 1;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+@keyframes timer {
+  10%, 50% {
+    transform: translateX(0%);
+  }
+  60%, 100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes text-highlight {
+  2%, 25% {
+    color: white;
+    opacity: 1;
+    font-weight: 600;
+  }
+  28%, 100% {
+    color: white;
+    opacity: 0.3;
+  }
+}
+.container{
+  width: 60vh;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes moving{
+  from {
+    }
+  
+    to {
+      margin-top:-70%;
+    }
+}
+
+#image{
+  animation: 4s linear 0s alternate infinite moving;
+}
+.containerButton{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+
+.previous{
+  display: flex;
+  justify-content: space-around;
+  width: 12%;
+  align-items: center;
+  margin:  30px 0 0 70px;
+  
+}
+a:-webkit-any-link{
+  text-decoration: none;
+}
+
+.previous img{
+  margin-right: 30px ;
+  height: 40px;
+  width: auto;
+}
+
+.previous p{
+  color: #B8DFD8 ;
+  font-size: 20px;
+  letter-spacing: 1.3px;  
+}
+
+a{
+font-size: small;
+color: #B8DFD8;
+margin-right: 800px;
+text-decoration: none;
+
+}
+  
+.info{
+margin-right: 10px;
+width: 100%;
+display: flex;
+position: absolute;
+justify-content: right;
+}
+
+#infobulle{
+opacity: 0;
+margin-top: 10px;
+margin-right: 20px;
+}
+
+#imginfo{
+z-index: 100;
+width: 60px;
+height: 60px;
+padding-right: 20px;
+margin-right: 20px;
+margin-top: 20px;
+position: absolute;
+}
+.heartContainer{
+cursor: pointer;
+z-index: 100;
+display: flex;
+justify-content: center;
+position: relative;
+bottom: 40px;
+}
+

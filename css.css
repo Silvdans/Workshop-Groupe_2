@@ -1,0 +1,308 @@
+@font-face {
+  font-family: 'Raleway', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+  
+}
+body {
+  background-color: #4c4c6d;
+
+}
+ul{
+list-style: none;
+text-decoration:none;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+  font-family:'Raleway', sans-serif;
+  color: white;
+}
+
+a {text-decoration: none;}
+p {
+color: white}
+
+.v{
+  color: #B8DFD8;
+}
+.select img {
+  position: relative;
+  width : 65px;
+  z-index: -1;
+  pointer-events: none;
+  margin-right: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, 4px);
+}
+.keur{
+  margin-top: 6px;
+}
+
+.keurk{
+  border: solid #B8DFD8 2px!important;
+  background-color: #4c4c6d!important;
+  padding-bottom: 18px!important;
+
+}
+
+#container {
+  margin-left: 100px;
+  margin-right:100px;
+}
+#zone1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+#zone2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.select {
+  text-align: center;
+
+}
+
+#rectangle{
+    height:300px;
+    background:rgba(255,255,255,0.1);
+    width: 70%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.select{
+  padding-top: 18px;
+}
+#rectangle2{
+    position: relative;
+    height:300px;
+    width: 20%;
+    background:rgba(255,255,255,0.1);
+    margin-left: 50px;
+    margin-right: 0px;
+    border-radius: 20px;
+}
+#logo{
+  margin-top:30px;
+  left: 100px;
+}
+
+#moods{
+  margin: 32px;
+  height: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+#mood_concentre{
+  background:rgba(255,255,255,0.1);
+  width: 19%;
+  border-radius: 20px;
+}
+
+#mood_deborde{
+  background:rgba(255,255,255,0.1);
+  width: 19%;
+  border-radius: 20px;
+
+}
+.box p {
+  padding-left: 20px;
+}
+
+.select:hover{
+  cursor: pointer;
+} 
+
+#mood_endormi{
+  background:rgba(255,255,255,0.1);
+  width: 19%;
+  border-radius: 20px;
+
+}
+
+#mood_enerve{
+  background:rgba(255,255,255,0.1);
+  width: 19%;
+  border-radius: 20px;
+
+}
+
+#mood_stresse{
+  background:rgba(255,255,255,0.1);
+  width: 19%;
+  border-radius: 20px;
+
+}
+.box{
+  margin-left: 20px;
+  background:rgba(255,255,255,0.1);
+  width: 100%;
+  border-radius: 20px;
+}
+
+.titre{
+  margin-left: 32px;
+color: white;
+}
+img{
+  transform-origin: center;
+  transform: scale(1.5);
+}
+h2{
+  color: white;
+}
+
+.profil_container {
+  display: flex;
+  align-items: center;
+ flex-direction: column;
+}
+
+.profil_actions {
+display: flex;
+flex-direction: row;
+margin-top: 50px;
+}
+
+.profil_logo {
+  margin-top: 20px;
+}
+
+.advices {
+  grid-area: advices;
+}
+
+.zenImage {
+  grid-area: zenImage;
+  position: relative;
+}
+
+.zenImage img {
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+}
+
+.favorites {
+  grid-area: favorites;
+  display: grid;
+}
+
+.focusState,
+  .user  {
+    background-color: #5e5e7b;
+    border: 1px solid #5e5e7b;
+    border-radius: 5%;
+    color: #ffffff;
+}
+
+.advices h3,
+.favorites h3 {
+  color: #ffffff;
+}
+
+.focusState div,
+  .user h3,
+  .advices h3,
+  .favorites h3 {
+    margin: 1.5rem;
+    font-weight: bold;
+}
+
+.focusState ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+}
+
+
+
+.focusState ul li {
+  background-color: #6f6f89;
+  padding: 1.5rem;
+  margin: auto;
+  border: 2px solid #6f6f89;
+  border-radius: 5%;
+  color: #f8fcfa;
+  text-align: center;
+  flex: 1;
+}
+
+.userChoices {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  margin-top: 3rem;
+}
+
+
+
+.advices ul, .favorites ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin: auto;
+}
+
+
+.advices ul li, .favorites ul li {
+  border: 2px solid #5e5e7b;
+  padding: 1rem ;
+  color: #B8DFD8;
+  background-color: #5e5e7b;
+  border-radius: 20px;
+  /* padding-bottom: 2rem; */
+
+}
+.advices ul li p {
+  display: inline;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  /* padding-bottom: 2rem ; */
+  /* text-align: center; */
+}
+
+.favorites ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #B8DFD8;
+  color: #4c4c6d;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext {
+  width:120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
