@@ -135,6 +135,12 @@
                     <p>Relaxation</p>
                  </li>
               </a>  
+              <li>
+                <a href="image_ia.php">
+                  <img src="assets/img/nyancat.png" style="height:30px">
+                  <p>Génération d'image</p>
+                </a>
+              </li>
               <a href=""  class="tooltip"> 
                 <li class="keurk">
                   <img src="assets/img/heart.png" alt="" class="keur">
@@ -365,4 +371,3 @@ $( "#boxmood_stresse" ).hide();
 
 </script>
 </body>
-</html>

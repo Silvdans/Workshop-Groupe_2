@@ -13,7 +13,9 @@
     src: url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
     
 }
-
+cat{
+    height:50px
+}
 body{
     display: flex;
     height: 100vh;
@@ -140,4 +142,7 @@ h2{
     line-height: 150px;
     font-family: 'Raleway', sans-serif;
     
+}
+.cat{
+    height: 50px;
 }

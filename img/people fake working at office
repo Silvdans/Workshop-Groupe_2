@@ -1,0 +1,69 @@
+Script started on 2022-10-11 10:29:13+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="117" LINES="17"]
+[?2004h]0;loic@LoicPc: /var/www/html/img[01;32mloic@LoicPc[00m:[01;34m/var/www/html/img[00m$ cd ..
+[?2004l[?2004h]0;loic@LoicPc: /var/www/html[01;32mloic@LoicPc[00m:[01;34m/var/www/html[00m$ cd ..git push origin mastermerge create_exercice[6Pcheckout masterpush origin create_exercice[K origin master[K[K[K[K[K[K[K[K[Kpythion[K[Ko[K[Kon scropt[K[K[K[K[K[Ksr[Kcript.py ""p"e"o"p"l"e" "f"a"k"e" "w"o"r"k"i"n"g" "a"t" "o"f"f"i"c"e"
+[?2004lpeople fake working at office
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1012, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f86d5bf77c0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='labs.openai.com', port=443): Max retries exceeded with url: /api/labs/tasks (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f86d5bf77c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/script.py", line 10, in <module>
+    generations = dalle.generate(sys.argv[1])
+  File "/usr/local/lib/python3.10/dist-packages/dalle2/dalle2.py", line 28, in generate
+    return self.get_task_response(body)
+  File "/usr/local/lib/python3.10/dist-packages/dalle2/dalle2.py", line 66, in get_task_response
+    response = requests.post(url, headers=headers, data=json.dumps(body))
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='labs.openai.com', port=443): Max retries exceeded with url: /api/labs/tasks (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f86d5bf77c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[?2004h]0;loic@LoicPc: /var/www/html[01;32mloic@LoicPc[00m:[01;34m/var/www/html[00m$ python script.py "people fake working at office"
+[?2004lpeople fake working at office
+✔️ Task created with ID: task-hQhXX4B6URgugVPEpNs1rcLn
+⌛ Waiting for task to finish...
+...task not completed yet
+...task not completed yet
+🙌 Task completed!
+[{'id': 'generation-QS0iaYGyl3epJ9ybnOQafJwG', 'object': 'generation', 'created': 1665477020, 'generation_type': 'ImageGeneration', 'generation': {'image_path': 'https://openailabsprodscus.blob.core.windows.net/private/user-wI65ro3rLSPZdZjcW1qkHVFL/generations/generation-QS0iaYGyl3epJ9ybnOQafJwG/image.webp?st=2022-10-11T07%3A31%3A22Z&se=2022-10-11T09%3A29%3A22Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/webp&skoid=15f0b47b-a152-4599-9e98-9cb4a58269f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2022-10-11T06%3A26%3A48Z&ske=2022-10-18T06%3A26%3A48Z&sks=b&skv=2021-08-06&sig=63GRKM9%2Bhf0Ipgm3Mw%2Br7pJxKhXued%2BrKfwcn/Qq8e8%3D'}, 'task_id': 'task-hQhXX4B6URgugVPEpNs1rcLn', 'prompt_id': 'prompt-1oRb6BNDhGl1feA7JA1ePomL', 'is_public': False}, {'id': 'generation-HWzk5gAmPKpugNu08VuZQk3j', 'object': 'generation', 'created': 1665477020, 'generation_type': 'ImageGeneration', 'generation': {'image_path': 'https://openailabsprodscus.blob.core.windows.net/private/user-wI65ro3rLSPZdZjcW1qkHVFL/generations/generation-HWzk5gAmPKpugNu08VuZQk3j/image.webp?st=2022-10-11T07%3A31%3A22Z&se=2022-10-11T09%3A29%3A22Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/webp&skoid=15f0b47b-a152-4599-9e98-9cb4a58269f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2022-10-11T06%3A26%3A48Z&ske=2022-10-18T06%3A26%3A48Z&sks=b&skv=2021-08-06&sig=U5iQIklmMEj4ktOIiMPIxxFvpXFxEkmMb9cxOAOUaRo%3D'}, 'task_id': 'task-hQhXX4B6URgugVPEpNs1rcLn', 'prompt_id': 'prompt-1oRb6BNDhGl1feA7JA1ePomL', 'is_public': False}, {'id': 'generation-AQHcOrSrMQDSwijCJ1IomBlk', 'object': 'generation', 'created': 1665477020, 'generation_type': 'ImageGeneration', 'generation': {'image_path': 'https://openailabsprodscus.blob.core.windows.net/private/user-wI65ro3rLSPZdZjcW1qkHVFL/generations/generation-AQHcOrSrMQDSwijCJ1IomBlk/image.webp?st=2022-10-11T07%3A31%3A22Z&se=2022-10-11T09%3A29%3A22Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/webp&skoid=15f0b47b-a152-4599-9e98-9cb4a58269f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2022-10-11T06%3A26%3A48Z&ske=2022-10-18T06%3A26%3A48Z&sks=b&skv=2021-08-06&sig=Dk0lRZMPUQbyvY2ILbiIYo0/v7qHFPIwci8Ics3X%2BvI%3D'}, 'task_id': 'task-hQhXX4B6URgugVPEpNs1rcLn', 'prompt_id': 'prompt-1oRb6BNDhGl1feA7JA1ePomL', 'is_public': False}, {'id': 'generation-ZeX40VpuIJD3vE63J8e3m25D', 'object': 'generation', 'created': 1665477020, 'generation_type': 'ImageGeneration', 'generation': {'image_path': 'https://openailabsprodscus.blob.core.windows.net/private/user-wI65ro3rLSPZdZjcW1qkHVFL/generations/generation-ZeX40VpuIJD3vE63J8e3m25D/image.webp?st=2022-10-11T07%3A31%3A22Z&se=2022-10-11T09%3A29%3A22Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/webp&skoid=15f0b47b-a152-4599-9e98-9cb4a58269f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2022-10-11T06%3A26%3A48Z&ske=2022-10-18T06%3A26%3A48Z&sks=b&skv=2021-08-06&sig=TRj5fldD98C/VeAFpLDLJrlzcUGX%2BwGzCO3H90c4CSY%3D'}, 'task_id': 'task-hQhXX4B6URgugVPEpNs1rcLn', 'prompt_id': 'prompt-1oRb6BNDhGl1feA7JA1ePomL', 'is_public': False}]
+[?2004h]0;loic@LoicPc: /var/www/html[01;32mloic@LoicPc[00m:[01;34m/var/www/html[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;loic@LoicPc: /var/www/html[01;32mloic@LoicPc[00m:[01;34m/var/www/html[00m$ python script.py "people fake working at office"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1
