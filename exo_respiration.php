@@ -16,7 +16,7 @@
                 </div>
              </a>
 
-            <img id="imginfo"src="Info.svg">
+            <!-- <img id="imginfo"src="Info.svg"> -->
             <img id="infobulle" src="Infobulle.svg">
         </div>
         <div class="directions">

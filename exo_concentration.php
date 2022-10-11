@@ -17,9 +17,9 @@
                 <p>Précédent</p>
             </div>
           </a>
-        <div>
+        <!-- <div>
           <img id="imginfo"src="Info.svg">
-        </div>
+        </div> -->
       </div>
     
     <div id="container">
