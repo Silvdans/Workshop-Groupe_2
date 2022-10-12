@@ -36,8 +36,8 @@ if(isset($_POST['form'])){
 
     <section class="left">
         <div class="citation">
-            <q>Cela semble toujours impossible jusqu'à ce qu'on le fasse</q>
-            <p>Nelson Mandela</p>
+            <q>Le travail est l'activité vitale propre au travailleur, l'expression personnelle de sa vie.</q>
+            <p>Emmanuel Kant</p>
         </div>
         <svg class="man" width="351" height="324" viewBox="0 0 351 324" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
@@ -92,9 +92,9 @@ if(isset($_POST['form'])){
 
         <div class="slogan">
             <h1>
-                Z'handy
+                Welfare
             </h1>
-            <p>Stay focused</p>
+            <p>Take care of yourself</p>
         </div>
         
         <div class="register">

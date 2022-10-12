@@ -5,7 +5,7 @@ function notifier() {
     console.log(Notification.permission);
    if (Notification.permission === "granted") {
       console.log("granted");
-    const notification = new Notification("Z'handy - Toujours concentre(e) ?", {
+    const notification = new Notification("Welfare - Toujours concentre(e) ?", {
         body: "Appuyez sur la notification si vous etes toujours concentre(e) !"
       //image: "assets/img/logo.png"
  
