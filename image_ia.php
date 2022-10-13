@@ -60,7 +60,28 @@ function isVoteliked($theme){
     }
 }
 ?>
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
 
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    function displayModal(myModal){
+        document.getElementById(myModal).style.display = "block";
+        captionText = document.getElementById("caption"+myModal);
+        console.log(captionText)
+        captionText.innerHTML = myModal.slice(0, -7).replaceAll("_", " ").toUpperCase();
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    function removeModal(myModal){
+        document.getElementById(myModal).style.display = "none";
+        captionText.innerHTML = ""
+    }
+</script>  
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -70,6 +91,14 @@ function isVoteliked($theme){
     <script src="https://kit.fontawesome.com/c146f5f312.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #4c4c6d;
+    }
     .generated_images{
         display:flex;
         flex-direction:row;
@@ -81,9 +110,6 @@ function isVoteliked($theme){
         display:flex;
         justify-content: center;
 
-    }
-    .picture{
-        height: 200px;
     }
     .main_div{
         display:flex;
@@ -166,6 +192,145 @@ function isVoteliked($theme){
         top: 56px;
         left: 12px;
         }
+        #myImg {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: solid black 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            }
+
+            #myImg:hover {opacity: 0.7;}
+
+            /* The Modal (background) */
+            .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            .caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {  
+            animation-name: zoom;
+            animation-duration: 0.6s;
+            }
+
+            @keyframes zoom {
+            from {transform: scale(0.1)} 
+            to {transform: scale(1)}
+            }
+
+            /* The Close Button */
+            .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+            /* 100% Image Width on Smaller Screens */
+            @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            }
+            .form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
         @keyframes lds-roller {
         0% {
             transform: rotate(0deg);
@@ -189,8 +354,10 @@ function isVoteliked($theme){
             setVote($_POST['theme'], $_POST['like']);
         }
 ?>
-
-<input id="text_input" type="text" name="text">
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='text_input' required />
+  <label for="name" class="form__label">Veuillez rentrer la phrase :</label>
+</div>
 <input type="submit" name="submit" value="Valider" onclick='showImagesInAjax()'/>
 
 <div class="main_div">
@@ -222,8 +389,12 @@ function peuplerImages()
                         echo "\n"; 
                         while (($file = readdir($sous_dossier)) !== false) {
                             if($file != '.' && $file != '..'){
-                                echo '<img class="picture" src="'.$dir.'/'.$dossier.'/'.$file.'" alt="image">';
-                                echo "\n";                            
+                                echo '<img id="myImg" src="'.$dir.'/'.$dossier.'/'.$file.'" height="200px" onclick="displayModal(\''.$file.'\')">';
+                                echo '<div id="'.$file.'" class="modal">';
+                                echo '<span class="close" onclick="removeModal(\''.$file.'\')">&times;</span>';
+                                echo '<img class="modal-content" src="'.$dir.'/'.$dossier.'/'.$file.'">';
+                                echo '<div class="caption" id="caption'.$file.'"></div>';
+                                echo '</div>';                       
                             } 
                         }
                         echo $endiv;
@@ -250,7 +421,6 @@ function peuplerImages()
 peuplerImages()
 ?>
 </div>
-
 </html>
 <script>
     

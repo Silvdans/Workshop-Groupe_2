@@ -22,8 +22,8 @@ def add_theme(name):
     mycursor.execute(sql, val)
     mydb.commit()
     print(mycursor.rowcount, "record inserted.")
-
-dalle = Dalle2("sess-u5NIK7SqWYaKoRjIsvB6c4KbRRMIyPmADMC8B2gG")
+    
+dalle = Dalle2("sess-6HlaOSOWSvZcf9xqmBIAuI4tZCndWZzJmb8nexwj")
 
 file = open("info.txt", "a")
 file.write(sys.argv[1])
@@ -37,11 +37,13 @@ else:
     if not os.path.exists(path):
         file.write("les fichiers vont etre crées")
         os.makedirs(path)
-        file.write("avant creation row")
-        add_theme(dirname)
-        file.write("apres création row")
-        
+    
+    file.write('avant generation')
+    file.write(sys.argv[1])
+    file.write(path)
     generations = dalle.generate_and_download(sys.argv[1], path)
+    add_theme(dirname)
+    file.write('apres génération')
     
 for count, filename in enumerate(os.listdir(path)):
     os.rename(path+'/'+filename, path+'/'+dirname+"_"+str(count)+'.webp')
